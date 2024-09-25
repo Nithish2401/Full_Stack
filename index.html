@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Seat Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Train Seat Booking</h1>
+        <div class="info">
+            <p><strong>Available Seats:</strong> <span id="available-count">0</span></p>
+            <p><strong>Booked Seats:</strong> <span id="booked-count">0</span></p>
+        </div>
+        <div class="seats" id="seats"></div>
+        <div class="summary">
+            <h2>Selected Seats</h2>
+            <ul id="selected-seats"></ul>
+            <h3>Total Price: ₹<span id="total-price">0</span></h3>
+            <button id="book-button" disabled>Book Selected Seats</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
