@@ -1,14 +1,14 @@
 const seatsData = [
     { name: "A1", price: 250, booked: false },
     { name: "A2", price: 250, booked: false },
-    { name: "A3", price: 250, booked: false},  // Booked
+    { name: "A3", price: 250, booked: false},  
     { name: "A4", price: 250, booked: false },
     { name: "B1", price: 200, booked: false },
-    { name: "B2", price: 200, booked: false},  // Booked
+    { name: "B2", price: 200, booked: false},  
     { name: "B3", price: 200, booked: false },
     { name: "B4", price: 200, booked: false },
     { name: "C1", price: 180, booked: false },
-    { name: "C2", price: 180, booked: false },  // Booked
+    { name: "C2", price: 180, booked: false },  
     { name: "C3", price: 180, booked: false },
     { name: "C4", price: 180, booked: false },
     { name: "D1", price: 150, booked: false },
@@ -32,7 +32,7 @@ let selectedSeats = [];
 let totalPrice = 0;
 
 function renderSeats() {
-    seatsContainer.innerHTML = '';  // Clear previous seats
+    seatsContainer.innerHTML = '';  
     let availableCount = 0;
     let bookedCount = 0;
 
@@ -85,25 +85,22 @@ function updateSummary() {
     });
 
     totalPriceElement.textContent = totalPrice;
-    bookButton.disabled = selectedSeats.length === 0;  // Enable/disable the booking button
+    bookButton.disabled = selectedSeats.length === 0;  
 }
 
 function bookSeats() {
     selectedSeats.forEach(seat => {
         const seatData = seatsData.find(s => s.name === seat.name);
         if (seatData) {
-            seatData.booked = true;  // Mark as booked
+            seatData.booked = true;  
         }
     });
     
-    selectedSeats = [];  // Clear selected seats
-    totalPrice = 0;      // Reset total price
+    selectedSeats = [];  
+    totalPrice = 0;      
     updateSummary();
-    renderSeats();       // Re-render seats
+    renderSeats();       
 }
-
-// Attach event listener to the booking button
 bookButton.addEventListener('click', bookSeats);
-
-// Initial render of seats
 renderSeats();
+
